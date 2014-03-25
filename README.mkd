@@ -1,0 +1,30 @@
+# Basic SDL Joypad-driven Menu
+
+![sdlmenu in action](https://raw.github.com/drbig/sdlmenu/master/example.png)
+
+A quickly-hacked [Ruby/SDL](http://www.kmc.gr.jp/~ohai/rubysdl.en.html) menu 'system' intended as a front-end for emulator systems on [Raspberry Pi](http://www.raspberrypi.org/).
+
+But given it's simplicity and portability you may just as well use it for anything you like.
+
+Caveats/Notes:
+
+* Will handle only about a dozen items (no paging whatsoever)
+* Will use first joypad; which button is the 'Enter' button will vary across joypads
+* The method to execute a command and then return back is a bit hacky (for a reason)
+* The ```example.rb``` is the version I use, the ```sdlmenu.rb``` can be considered development/debug version
+* Font included came with Ruby/SDL, I hope I'm not gonna get sued for that
+* Code is not commented... if something is unclear, treat it as an incentive to learn Ruby
+* SDL is low-level, and the interface is not fully consistent with itself, oh well...
+
+To configure, edit at least:
+
+```ruby
+FONT = 'sample.ttf' # you'll want absolute path to your TTF font
+MENU = [
+  ['Menu Item One', 'sleep 5'], # 'Title', 'Command'
+  ['Menu Item Two', 'sleep 5'], # and so on...
+  ['Exit', nil],                # nil command means exit
+]
+```
+
+If you need legalese assume [BSD 2-clause license](http://opensource.org/licenses/BSD-2-Clause).
